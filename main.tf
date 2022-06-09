@@ -8,11 +8,12 @@ module "vpc" {
 }
 
 module "rabbitmq" {
-  source     = "git::https://github.com/raghudevopsb64/tf-module-rabbitmq.git"
-  COMPONENT  = "rabbitmq"
-  ENV        = var.ENV
-  VPC_ID     = module.vpc.VPC_ID
-  VPC_CIDR   = module.vpc.VPC_CIDR
-  SUBNET_IDS = module.vpc.SUBNET_IDS
-  NODE_TYPE  = var.NODE_TYPE
+  source         = "git::https://github.com/raghudevopsb64/tf-module-rabbitmq.git"
+  COMPONENT      = "rabbitmq"
+  ENV            = var.ENV
+  VPC_ID         = module.vpc.VPC_ID
+  VPC_CIDR       = module.vpc.VPC_CIDR
+  SUBNET_IDS     = module.vpc.SUBNET_IDS
+  NODE_TYPE      = var.NODE_TYPE
+  WORKSTATION_IP = var.WORKSTATION_IP
 }
