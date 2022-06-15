@@ -33,4 +33,5 @@ module "app" {
   WORKSTATION_IP          = var.WORKSTATION_IP
   IAM_POLICY_CREATE       = true
   VPC_ACCESS_TO_ALB       = [module.vpc.VPC_CIDR, "10.10.5.0/24"]
+  PRIVATE_HOSTED_ZONE_ID  = module.vpc.PRIVATE_HOSTED_ZONE_ID
 }
